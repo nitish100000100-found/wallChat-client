@@ -7,14 +7,22 @@
   font-family: Arial, sans-serif;
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 .roomHeader {
   height: 70px;
   padding: 0 28px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   background: rgba(8, 10, 18, 0.9);
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
   position: relative;
   z-index: 10;
 }
@@ -23,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-size: 21px;
   font-weight: 700;
 }
@@ -30,42 +39,62 @@
 .logo img {
   width: 34px;
   height: 34px;
+
   object-fit: contain;
 }
 
 .connectionStatus {
   position: absolute;
+
   left: 50%;
   transform: translateX(-50%);
+
   display: flex;
   align-items: center;
   gap: 8px;
+
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 1px;
 }
 
 .statusDot {
   width: 8px;
   height: 8px;
+
   border-radius: 50%;
+
   background: #38ff88;
+
   box-shadow: 0 0 12px #38ff88;
 }
+
+/* =========================================================
+   MESSAGE BUTTON
+   ========================================================= */
 
 .messageButton {
   width: 42px;
   height: 42px;
+
   border: 0;
   border-radius: 12px;
+
   background: rgba(255, 255, 255, 0.08);
+
   color: white;
+
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 18px;
+
   position: relative;
+
   transition: 0.2s;
 }
 
@@ -77,17 +106,23 @@
   box-shadow:
     0 0 8px rgba(0, 255, 255, 0.8),
     0 0 22px rgba(0, 255, 255, 0.55);
+
   animation: messagePulse 1.2s infinite;
 }
 
 .messageBadge {
   position: absolute;
+
   top: 6px;
   right: 6px;
+
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
+
   background: #ff4d6d;
+
   box-shadow: 0 0 10px #ff4d6d;
 }
 
@@ -106,70 +141,131 @@
   }
 }
 
+/* =========================================================
+   VIDEO AREA
+   ========================================================= */
+
 .videoArea {
   height: calc(100vh - 70px);
+
   padding: 30px;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 24px;
+
+  box-sizing: border-box;
 }
+
+/* =========================================================
+   VIDEO CARD
+   ========================================================= */
 
 .videoCard {
   min-width: 0;
   min-height: 0;
+
   background: #0a0d15;
+
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   border-radius: 20px;
+
   overflow: hidden;
+
   position: relative;
+
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .videoCard video {
   width: 100%;
   height: 100%;
+
   display: block;
+
   object-fit: cover;
+
   background: #080b12;
 }
 
+/* =========================================================
+   VIDEO LABEL
+   ========================================================= */
+
 .videoLabel {
   position: absolute;
+
   left: 18px;
-  bottom: 18px;
+  bottom: 86px;
+
   padding: 7px 11px;
+
   border-radius: 8px;
+
   background: rgba(0, 0, 0, 0.65);
+
   font-size: 11px;
   font-weight: 700;
+
   letter-spacing: 1px;
+
+  z-index: 5;
 }
+
+/* =========================================================
+   VIDEO CONTROLS
+   ========================================================= */
 
 .controls {
   position: absolute;
-  right: 16px;
+
+  left: 50%;
   bottom: 14px;
+
+  transform: translateX(-50%);
+
   display: flex;
-  gap: 8px;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  z-index: 8;
 }
 
 .controlButton,
 .controlOff {
   width: 40px;
   height: 40px;
+
   border: 0;
+
   border-radius: 50%;
+
   color: white;
+
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 15px;
+
   transition: 0.2s;
+
+  flex: 0 0 40px;
 }
 
 .controlButton {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.72);
 }
 
 .controlOff {
@@ -181,29 +277,45 @@
   transform: scale(1.08);
 }
 
+/* =========================================================
+   WAITING
+   ========================================================= */
+
 .waiting {
   position: absolute;
+
   inset: 0;
+
   z-index: 2;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
   background: #080b12;
+
   color: #aab0bd;
 }
 
 .waiting p {
   margin-top: 16px;
+
   font-size: 14px;
 }
 
 .loader {
   width: 34px;
   height: 34px;
+
   border: 3px solid rgba(255, 255, 255, 0.12);
+
   border-top-color: white;
+
   border-radius: 50%;
+
   animation: spin 0.8s linear infinite;
 }
 
@@ -213,108 +325,171 @@
   }
 }
 
+/* =========================================================
+   CHAT PANEL
+   ========================================================= */
+
 .chatPanel {
   position: absolute;
+
   top: 84px;
   right: 28px;
+
   width: 350px;
+
   height: calc(100vh - 110px);
+
   z-index: 20;
+
   display: flex;
+
   flex-direction: column;
+
   background: rgba(9, 12, 21, 0.97);
+
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   border-radius: 18px;
+
   overflow: hidden;
+
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+
   backdrop-filter: blur(15px);
 }
 
 .chatHeader {
   padding: 18px;
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .chatTitle {
   display: block;
+
   font-size: 16px;
+
   font-weight: 700;
 }
 
 .chatSubtitle {
   display: block;
+
   margin-top: 4px;
+
   color: #858c9c;
+
   font-size: 11px;
 }
 
 .closeChat {
   width: 34px;
   height: 34px;
+
   border: 0;
+
   border-radius: 9px;
+
   background: rgba(255, 255, 255, 0.07);
+
   color: white;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .messages {
   flex: 1;
+
+  min-height: 0;
+
   padding: 18px;
+
   overflow-y: auto;
+
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 }
 
 .emptyMessages {
   margin: auto;
+
   color: #707786;
+
   font-size: 13px;
 }
 
 .myMessage,
 .friendMessage {
   max-width: 78%;
+
   padding: 10px 13px;
+
   border-radius: 13px;
+
   font-size: 13px;
+
   line-height: 1.4;
+
   word-break: break-word;
 }
 
 .myMessage {
   align-self: flex-end;
+
   background: #fff;
+
   color: #111;
+
   border-bottom-right-radius: 4px;
 }
 
 .friendMessage {
   align-self: flex-start;
+
   background: #181d29;
+
   color: white;
+
   border-bottom-left-radius: 4px;
 }
 
 .messageInputArea {
   padding: 12px;
+
   display: flex;
+
   gap: 8px;
+
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .messageInputArea input {
   flex: 1;
+
   min-width: 0;
+
   border: 0;
+
   outline: 0;
+
   border-radius: 10px;
+
   padding: 11px 12px;
+
   background: #151a25;
+
   color: white;
 }
 
@@ -324,85 +499,141 @@
 
 .messageInputArea button {
   width: 42px;
-  border: 0;
-  border-radius: 10px;
-  background: white;
-  color: #111;
-  cursor: pointer;
-}
 
-.connectOverlay {
-  position: fixed;
-  inset: 0;
-  z-index: 30;
+  flex: 0 0 42px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #111;
+
+  cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* =========================================================
+   CONNECT OVERLAY
+   ========================================================= */
+
+.connectOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 30;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   padding: 20px;
+
   background: rgba(3, 5, 10, 0.82);
+
   backdrop-filter: blur(8px);
 }
 
 .connectCard {
   width: min(430px, 100%);
+
   padding: 32px;
+
   border-radius: 20px;
+
   background: #0d111b;
+
   border: 1px solid rgba(255, 255, 255, 0.1);
+
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+
+  box-sizing: border-box;
 }
 
 .connectCard h2 {
   margin: 0 0 8px;
+
   font-size: 25px;
 }
 
 .connectCard p {
   margin: 0 0 25px;
+
   color: #8d94a3;
+
   line-height: 1.6;
+
   font-size: 13px;
 }
 
 .connectCard label {
   display: block;
+
   margin-bottom: 7px;
+
   font-size: 12px;
+
   color: #aeb5c2;
 }
 
 .myId {
   padding: 13px;
+
   border-radius: 10px;
+
   background: #171c27;
+
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   color: white;
+
   font-size: 13px;
+
   word-break: break-all;
 }
 
 .or {
   margin: 20px 0;
+
   text-align: center;
+
   color: #656c7a;
+
   font-size: 11px;
+
   font-weight: 700;
 }
 
 .connectCard form {
   display: flex;
+
   gap: 8px;
 }
 
 .connectCard form input {
   flex: 1;
+
   min-width: 0;
+
   padding: 13px;
+
   border: 1px solid rgba(255, 255, 255, 0.08);
+
   outline: none;
+
   border-radius: 10px;
+
   background: #171c27;
+
   color: white;
+
+  box-sizing: border-box;
 }
 
 .connectCard form input::placeholder {
@@ -411,54 +642,84 @@
 
 .connectCard form button {
   padding: 0 18px;
+
   border: 0;
+
   border-radius: 10px;
+
   background: white;
+
   color: #111;
+
   font-weight: 700;
+
   cursor: pointer;
 }
 
 .error {
   margin-bottom: 18px;
+
   padding: 10px 12px;
+
   border-radius: 9px;
+
   background: rgba(230, 57, 70, 0.12);
+
   border: 1px solid rgba(230, 57, 70, 0.25);
+
   color: #ff7b86;
+
   font-size: 12px;
 }
 
+/* =========================================================
+   END CALL
+   ========================================================= */
+
 .endCall {
   position: fixed;
+
   left: 50%;
   bottom: 22px;
+
   transform: translateX(-50%);
+
   z-index: 15;
+
   padding: 11px 22px;
+
   border: 0;
+
   border-radius: 10px;
+
   background: #e63946;
+
   color: white;
+
   font-weight: 700;
+
   cursor: pointer;
+
   box-shadow: 0 8px 25px rgba(230, 57, 70, 0.3);
+
+  transition: 0.2s;
 }
 
+.endCall:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
 
-
-
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 800px) {
-  /* ==========================================================
-     MOBILE VIDEO CALL LAYOUT
-     FRIEND = FULL SCREEN
-     YOU = FLOATING PREVIEW
-     ========================================================== */
-
   .personalRoom {
+    width: 100%;
     height: 100dvh;
+
     min-height: 100dvh;
+
     overflow: hidden;
   }
 
@@ -466,12 +727,15 @@
 
   .roomHeader {
     height: 58px;
+
     padding: 0 12px;
-    flex-shrink: 0;
+
+    box-sizing: border-box;
   }
 
   .logo {
     gap: 7px;
+
     font-size: 17px;
   }
 
@@ -487,163 +751,176 @@
   .messageButton {
     width: 38px;
     height: 38px;
+
     border-radius: 11px;
+
     font-size: 17px;
   }
 
   /* ---------------- VIDEO AREA ---------------- */
 
   .videoArea {
-    position: relative;
+    width: 100%;
+
     height: calc(100dvh - 58px);
+
     min-height: 0;
+
     padding: 0;
-    display: block;
-    overflow: hidden;
+
+    display: grid;
+
+    /*
+      YOU
+      FRIEND
+    */
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 1px;
+
     background: #000;
-  }
 
-  /* FRIEND = MAIN FULL SCREEN VIDEO */
-
-  .videoCard:nth-child(2) {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    z-index: 1;
-    background: #080b12;
-  }
-
-  .videoCard:nth-child(2) video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* YOU = FLOATING VIDEO */
-
-  .videoCard:nth-child(1) {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 105px;
-    height: 145px;
-    z-index: 5;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     overflow: hidden;
-    background: #080b12;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.55);
   }
 
-  .videoCard:nth-child(1) video {
+  /* =====================================================
+     BOTH VIDEO CARDS STAY IN THEIR OWN DIV
+     ===================================================== */
+
+  .videoCard {
+    position: relative;
+
     width: 100%;
     height: 100%;
-    object-fit: cover;
+
+    min-width: 0;
+    min-height: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
   }
 
-  /* ---------------- VIDEO LABELS ---------------- */
+  /* ---------------- VIDEO ---------------- */
+
+  .videoCard video {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    object-fit: cover;
+
+    display: block;
+  }
+
+  /* ---------------- LABEL ---------------- */
 
   .videoLabel {
     left: 9px;
-    bottom: 9px;
+    bottom: 66px;
+
     padding: 5px 8px;
+
     border-radius: 7px;
+
     font-size: 8px;
+
     letter-spacing: 0.8px;
+
+    z-index: 8;
   }
 
-  /* ---------------- YOUR CONTROLS ---------------- */
+  /* =====================================================
+     CONTROLS
+     ===================================================== */
 
-  .videoCard:nth-child(1) .controls {
-    display: none;
-  }
-
-  /* ---------------- FRIEND CONTROLS ---------------- */
-
-  .videoCard:nth-child(2) .controls {
+  .controls {
     position: absolute;
+
     left: 50%;
-    right: auto;
-    bottom: 76px;
+    bottom: 10px;
+
     transform: translateX(-50%);
-    z-index: 6;
+
+    width: auto;
+
+    height: 44px;
+
     display: flex;
-    gap: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    z-index: 10;
   }
+
+  /*
+     IMPORTANT:
+     DON'T HIDE ANY CONTROLS
+  */
 
   .controlButton,
   .controlOff {
-    width: 44px;
-    height: 44px;
-    font-size: 16px;
-    backdrop-filter: blur(8px);
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
   }
 
   .controlButton {
     background: rgba(0, 0, 0, 0.72);
   }
 
-  /* ---------------- WAITING ---------------- */
-
-  .waiting {
-    border-radius: 0;
+  .controlOff {
+    background: #e63946;
   }
 
-  .waiting p {
-    font-size: 13px;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  /* ---------------- END CALL ---------------- */
-
-  .endCall {
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
-    z-index: 10;
-
-    width: 48px;
-    height: 48px;
-    padding: 0;
-
-    border-radius: 50%;
-    font-size: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .endCall::before {
-    content: "📞";
-    font-size: 18px;
-    transform: rotate(135deg);
-  }
-
-  .endCall:hover {
-    transform: translateX(-50%);
-  }
-
-  /* ---------------- CHAT ---------------- */
+  /* =====================================================
+     CHAT
+     ===================================================== */
 
   .chatPanel {
     position: fixed;
+
     top: 0;
     right: 0;
+    bottom: 0;
     left: 0;
 
     width: 100%;
+
     height: 100dvh;
 
+    z-index: 50;
+
     border: 0;
+
     border-radius: 0;
 
-    z-index: 50;
+    background: rgba(9, 12, 21, 0.98);
   }
 
   .chatHeader {
@@ -660,10 +937,13 @@
 
   .messageInputArea input {
     min-width: 0;
+
     font-size: 16px;
   }
 
-  /* ---------------- CONNECT SCREEN ---------------- */
+  /* =====================================================
+     CONNECT OVERLAY
+     ===================================================== */
 
   .connectOverlay {
     padding: 16px;
@@ -671,8 +951,11 @@
 
   .connectCard {
     width: 100%;
+
     max-width: 430px;
+
     padding: 24px 20px;
+
     border-radius: 18px;
   }
 
@@ -682,92 +965,77 @@
 
   .connectCard p {
     font-size: 13px;
+
     margin-bottom: 20px;
   }
 
   .connectCard form {
     flex-direction: column;
+
     gap: 10px;
   }
 
   .connectCard form input {
     width: 100%;
-    box-sizing: border-box;
+
     height: 46px;
   }
 
   .connectCard form button {
     width: 100%;
+
     height: 46px;
   }
 
   .myId {
     font-size: 12px;
+
     line-height: 1.4;
   }
 
   .or {
     margin: 16px 0;
   }
-}
 
+  /* =====================================================
+     END CALL
+     ===================================================== */
 
-.endCall:hover {
-  transform: translateX(-50%) translateY(-2px);
-}
+  .endCall {
+    position: fixed;
 
-@media (max-width: 800px) {
-  .roomHeader {
-    padding: 0 16px;
+    left: 50%;
+
+    bottom: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
   }
 
-  .videoArea {
-    height: auto;
-    min-height: calc(100vh - 70px);
-    padding: 16px;
-    grid-template-columns: 1fr;
+  .endCall::before {
+    content: "📞";
+
+    font-size: 18px;
+
+    transform: rotate(135deg);
   }
 
-  .videoCard {
-    height: 42vh;
+  .endCall:hover {
+    transform: translateX(-50%);
   }
-
-  .connectionStatus {
-    display: none;
-  }
-
-  .chatPanel {
-    top: 80px;
-    right: 12px;
-    left: 12px;
-    width: auto;
-    height: calc(100vh - 95px);
-  }
-
-  .connectCard {
-    padding: 25px;
-  }
-
-  .connectCard form {
-    flex-direction: column;
-  }
-
-  .connectCard form button {
-    height: 44px;
-  }
-}
-/* FRIEND / VIDEO CONTROLS */
-.controls {
-  position: absolute;
-  left: 50%;
-  right: auto;
-  bottom: 14px;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-/* CHAT KE ANDAR WALA EXTRA CROSS HIDE */
-.closeChat {
-  display: none;
 }

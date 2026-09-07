@@ -3,6 +3,7 @@ import {
   FiMessageCircle,
   FiHome,
   FiArrowRight,
+  FiUsers,
 } from "react-icons/fi";
 
 export default function NotFound() {
@@ -44,8 +45,7 @@ export default function NotFound() {
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
-          maskImage:
-            "linear-gradient(to bottom, black, transparent 80%)",
+          maskImage: "linear-gradient(to bottom, black, transparent 80%)",
           pointerEvents: "none",
         }}
       />
@@ -145,8 +145,7 @@ export default function NotFound() {
                 "linear-gradient(180deg, #ffffff 0%, #bdbdbd 25%, #3b3b3b 70%, #0d0d0d 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              textShadow:
-                "0 30px 100px rgba(255,255,255,0.08)",
+              textShadow: "0 30px 100px rgba(255,255,255,0.08)",
               userSelect: "none",
             }}
           >
@@ -156,7 +155,7 @@ export default function NotFound() {
           {/* Center message */}
           <div
             style={{
-              maxWidth: "520px",
+              maxWidth: "620px",
               margin: "55px auto 0",
             }}
           >
@@ -195,7 +194,7 @@ export default function NotFound() {
                 flexWrap: "wrap",
               }}
             >
-              {/* Home */}
+              {/* Go Home */}
               <button
                 onClick={() => navigate("/")}
                 style={{
@@ -211,15 +210,14 @@ export default function NotFound() {
                   fontSize: "14px",
                   fontWeight: 600,
                   cursor: "pointer",
-                  boxShadow:
-                    "0 8px 30px rgba(255,255,255,0.08)",
+                  boxShadow: "0 8px 30px rgba(255,255,255,0.08)",
                 }}
               >
                 <FiHome size={17} />
                 Go Home
               </button>
 
-              {/* Chat */}
+              {/* Chat with Friends */}
               <button
                 onClick={() => navigate("/chat")}
                 style={{
@@ -240,8 +238,34 @@ export default function NotFound() {
                     "inset 0 1px rgba(255,255,255,0.05), 0 10px 35px rgba(0,0,0,0.4)",
                 }}
               >
+                <FiUsers size={17} />
+                Chat with Friends
+                <FiArrowRight size={15} />
+              </button>
+
+              {/* Chat with Room */}
+              <button
+                onClick={() => navigate("/personal-room")}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "9px",
+                  padding: "13px 22px",
+                  borderRadius: "12px",
+                  border: "1px solid #292929",
+                  background:
+                    "linear-gradient(180deg, #151515, #0b0b0b)",
+                  color: "#fff",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  boxShadow:
+                    "inset 0 1px rgba(255,255,255,0.05), 0 10px 35px rgba(0,0,0,0.4)",
+                }}
+              >
                 <FiMessageCircle size={17} />
-                Go to Chat
+                Chat with Room
                 <FiArrowRight size={15} />
               </button>
             </div>

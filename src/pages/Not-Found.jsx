@@ -4,6 +4,7 @@ import {
   FiHome,
   FiArrowRight,
   FiUsers,
+  FiUserPlus,
 } from "react-icons/fi";
 
 export default function NotFound() {
@@ -58,12 +59,10 @@ export default function NotFound() {
           height: "80px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
           padding: "0 clamp(24px, 6vw, 90px)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
-        {/* Logo */}
         <div
           style={{
             display: "flex",
@@ -155,7 +154,7 @@ export default function NotFound() {
           {/* Center message */}
           <div
             style={{
-              maxWidth: "620px",
+              maxWidth: "700px",
               margin: "55px auto 0",
             }}
           >
@@ -217,7 +216,7 @@ export default function NotFound() {
                 Go Home
               </button>
 
-              {/* Chat with Friends */}
+              {/* Connect with Friends */}
               <button
                 onClick={() => navigate("/chat")}
                 style={{
@@ -239,11 +238,11 @@ export default function NotFound() {
                 }}
               >
                 <FiUsers size={17} />
-                Chat with Friends
+                Connect with Friends
                 <FiArrowRight size={15} />
               </button>
 
-              {/* Chat with Room */}
+              {/* Connect with Stranger */}
               <button
                 onClick={() => navigate("/personal-room")}
                 style={{
@@ -264,8 +263,8 @@ export default function NotFound() {
                     "inset 0 1px rgba(255,255,255,0.05), 0 10px 35px rgba(0,0,0,0.4)",
                 }}
               >
-                <FiMessageCircle size={17} />
-                Chat with Room
+                <FiUserPlus size={17} />
+                Connect with Stranger
                 <FiArrowRight size={15} />
               </button>
             </div>

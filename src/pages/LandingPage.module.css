@@ -1,0 +1,516 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #050505;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+  padding: 26px 6vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.enterButton {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+
+  padding: 10px 17px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.enterButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  z-index: 5;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 75px 20px 55px;
+  box-sizing: border-box;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 24px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+
+  background: #5cff9d;
+  box-shadow: 0 0 12px rgba(92, 255, 157, 0.7);
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.hero > p {
+  margin: 28px 0 34px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================
+   CHAT OPTIONS
+========================= */
+
+.chatOptions {
+  width: min(680px, 100%);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-bottom: 52px;
+}
+
+.chatButton {
+  position: relative;
+
+  min-height: 100px;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  color: #fff;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.chatButton::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.06),
+    transparent 55%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.22s ease;
+}
+
+.chatButton:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.chatButton:hover::before {
+  opacity: 1;
+}
+
+.randomButton {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.personalButton {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.buttonIcon {
+  position: relative;
+  z-index: 1;
+
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+}
+
+.buttonContent {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.buttonContent strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.buttonContent span {
+  color: rgba(255, 255, 255, 0.43);
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.buttonArrow {
+  position: relative;
+  z-index: 1;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.chatButton:hover .buttonArrow {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 50px;
+
+  width: 100%;
+  max-width: 850px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-align: left;
+}
+
+.featureIcon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 17px;
+}
+
+.feature h3 {
+  margin: 0 0 4px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+.feature p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 11px;
+}
+
+/* =========================
+   BACKGROUND GRID
+========================= */
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  opacity: 0.22;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 25%,
+    black 75%,
+    transparent
+  );
+}
+
+/* =========================
+   GLOWS
+========================= */
+
+.glow {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glowTop {
+  top: -300px;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.glowBottom {
+  bottom: -350px;
+  right: -150px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  position: relative;
+  z-index: 10;
+
+  width: 100%;
+
+  padding: 22px 6vw;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.22);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.footer > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .nav {
+    padding: 20px 20px;
+  }
+
+  .enterButton span {
+    display: none;
+  }
+
+  .hero {
+    padding: 55px 18px 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 65px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero > p {
+    font-size: 14px;
+  }
+
+  .hero > p br {
+    display: none;
+  }
+
+  .chatOptions {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+    margin-bottom: 42px;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: auto;
+  }
+
+  .footer {
+    padding: 18px 20px;
+  }
+
+  .footer > div {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand span {
+    font-size: 17px;
+  }
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  .chatButton {
+    min-height: 92px;
+    padding: 15px;
+  }
+
+  .buttonIcon {
+    width: 42px;
+    height: 42px;
+  }
+}

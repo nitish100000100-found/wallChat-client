@@ -334,10 +334,11 @@ export default function PersonalRoom() {
         socket.current?.emit("yourfriend-end-call");
         cleanupCall();
         socket.current?.disconnect();
+         window.location.reload();
       }
-    } else {
-      window.location.reload();
-    }
+    } 
+     
+    
   };
 
   const handleBeforeUnload = () => {

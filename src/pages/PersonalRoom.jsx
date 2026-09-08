@@ -327,6 +327,49 @@ export default function PersonalRoom() {
 
     navigate("/");
   };
+  useEffect(() => {
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      if (peerConnection.current) {
+        socket.current?.emit("yourfriend-end-call");
+        cleanupCall();
+        socket.current?.disconnect();
+      }
+    } else {
+      window.location.reload();
+    }
+  };
+
+  const handleBeforeUnload = () => {
+    if (peerConnection.current) {
+      socket.current?.emit("yourfriend-end-call");
+      cleanupCall();
+      socket.current?.disconnect();
+    }
+  };
+
+  document.addEventListener(
+    "visibilitychange",
+    handleVisibilityChange
+  );
+
+  window.addEventListener(
+    "beforeunload",
+    handleBeforeUnload
+  );
+
+  return () => {
+    document.removeEventListener(
+      "visibilitychange",
+      handleVisibilityChange
+    );
+
+    window.removeEventListener(
+      "beforeunload",
+      handleBeforeUnload
+    );
+  };
+}, []);
 
 
   

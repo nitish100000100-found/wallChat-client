@@ -181,16 +181,25 @@ export default function PersonalRoom() {
       });
     };
 
-    pc.onconnectionstatechange = () => {
-      if (pc.connectionState === "connected") {
-        setConnected(true);
-        setError("");
-      }
+   pc.onconnectionstatechange = () => {
+  if (pc.connectionState === "connected") {
+    setConnected(true);
+    setError("");
+  }
 
-      if (["failed", "disconnected", "closed"].includes(pc.connectionState)) {
-        setConnected(false);
-      }
-    };
+  if (
+    ["failed", "disconnected", "closed"].includes(
+      pc.connectionState
+    )
+  ) {
+    setConnected(false);
+
+    socket?.current?.emit("yourfriend-end-call");
+    cleanupCall();
+    socket?.current?.disconnect();
+    navigate("/");
+  }
+};
 
     return pc;
   };

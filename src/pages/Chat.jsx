@@ -84,6 +84,49 @@ function Chat() {
   // handler already looks up the current peer, notifies them with
   // "peer-disconnected", and clears the relationship before matching —
   // so emitting "end-call" first would just do that same teardown twice.
+
+
+  useEffect(() => {
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      socket.emit("end-call");
+      cleanWebRTC();
+      socket.disconnect();
+    } else {
+      window.location.reload();
+    }
+  };
+
+  const handleBeforeUnload = () => {
+    socket.emit("end-call");
+    cleanWebRTC();
+    socket.disconnect();
+  };
+
+  document.addEventListener(
+    "visibilitychange",
+    handleVisibilityChange
+  );
+
+  window.addEventListener(
+    "beforeunload",
+    handleBeforeUnload
+  );
+
+  return () => {
+    document.removeEventListener(
+      "visibilitychange",
+      handleVisibilityChange
+    );
+
+    window.removeEventListener(
+      "beforeunload",
+      handleBeforeUnload
+    );
+  };
+}, []);
+
+  
   const handleConnectionLost = () => {
     cleanWebRTC();
     setMessages([]);
